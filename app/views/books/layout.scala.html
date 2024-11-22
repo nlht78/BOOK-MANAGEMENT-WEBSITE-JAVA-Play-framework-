@@ -1,0 +1,34 @@
+@(title: String)(body: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@title</title>
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/styles.css")">
+        <!-- Add any other meta tags or links to CSS here -->
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>@title</h1>
+                <nav>
+                    <a href="@routes.BooksController.index">Home</a>
+                    <a href="@routes.BooksController.create()">Create New Book</a>
+                    <!-- Add more links as needed -->
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            @body
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 My Book Management App</p>
+            </div>
+        </footer>
+    </body>
+</html>

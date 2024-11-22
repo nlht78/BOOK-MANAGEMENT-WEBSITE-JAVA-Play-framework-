@@ -1,0 +1,38 @@
+# Routes for assets
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /                      				controllers.HomeController.index
+#Routes HTTP 
+
+GET     /books                       		controllers.BooksController.index
+GET     /books/create                		controllers.BooksController.create(request: Request)
+GET     /books/:id                   		controllers.BooksController.show(id: Integer)
+GET     /books/edit/:id             		controllers.BooksController.edit(id: Integer, request: Request)
++nocsrf
+POST    /books/edit                  		controllers.BooksController.update(request: Request)
++nocsrf
+POST    /books/create                		controllers.BooksController.save(request: Request)
+GET     /books/delete/:id            		controllers.BooksController.destroy(id: Integer)
+
+
+
+# Routes với phiên bản API
+GET     /api/v1/books                       controllers.BooksController.getallbook
+GET     /api/v1/books/:id                   controllers.BooksController.showapi(id: Integer)
+
+
+
+
+
++nocsrf
+POST    /api/v1/books/create                controllers.BooksController.saveapi(request: Request)
+
+
+
+PUT     /api/v1/books/:id               controllers.BooksController.updateapi(id: Integer, request: Request)  
+DELETE  /api/v1/books/:id               controllers.BooksController.destroyapi(id: Integer)  
+
+
+
+
+
+

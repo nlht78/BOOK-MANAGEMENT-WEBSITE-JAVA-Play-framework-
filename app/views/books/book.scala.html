@@ -1,0 +1,17 @@
+@(books: Set[Book])
+
+@layout("All Books") {
+    <div class="book-list">
+        <h1>All Books</h1>
+        
+        @for(book <- books) {
+            <div class="book-item">
+                <a href="@routes.BooksController.show(book.id)">@book.title</a>
+                <p>Price: @book.price</p>
+                <p>Author: @book.author</p>
+            </div>
+        }
+
+        <a href="@routes.BooksController.create()" class="create-btn">Create</a>
+    </div>
+}
